@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nawelle & Ayoub — Mariage religieux</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efe8dc;--paper:#fffdf8;--ink:#2f2a25;--mute:#7d7266;--green:#3f7a3f;--peach:#f4c9a0;--env:#e8b987;--line:#e0d4c2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1c17;--paper:#2b2721;--ink:#f3ece0;--mute:#b5a999;--green:#6fb36f;--line:#443d33}}
+:root[data-theme="dark"]{--bg:#1f1c17;--paper:#2b2721;--ink:#f3ece0;--mute:#b5a999;--green:#6fb36f;--line:#443d33}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Quicksand,system-ui,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%;overflow-x:hidden}
+.ar{font-family:Amiri,'Traditional Arabic',serif;direction:rtl}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+section{max-width:460px;margin:0 auto;padding:40px 22px;text-align:center}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:20px}
+.hint{color:var(--mute);font-size:.85rem;margin-top:26px;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+/* envelope */
+.scene{position:relative;width:min(320px,86vw);height:min(215px,58vw);margin-top:150px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.back{position:absolute;inset:0;background:var(--env);border-radius:6px}
+.flap{position:absolute;left:0;right:0;top:0;height:60%;background:#dca56f;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s,z-index 0s .35s;z-index:4}
+.front{position:absolute;inset:0;z-index:3;background:linear-gradient(135deg,transparent 49.6%,#efc496 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.6%,#efc496 50%) right/50% 100% no-repeat;border-radius:6px}
+.seal{position:absolute;left:50%;top:46%;width:44px;height:44px;margin:-22px;border-radius:50%;background:radial-gradient(#5b9a5b,#2f6a35);box-shadow:0 2px 6px #0004;z-index:5;display:grid;place-items:center;color:#cfe8cf;font-size:1.2rem;transition:opacity .4s}
+.letter{position:absolute;left:6%;right:6%;bottom:8%;height:92%;background:var(--paper);border-radius:6px;z-index:2;padding:14px 10px;transition:transform 1s .5s;box-shadow:0 2px 10px #0002;overflow:hidden}
+.letter .ar{font-size:1.2rem;line-height:1.3}
+.letter h1{font:italic 500 1.5rem 'Cormorant Garamond',serif;margin:2px 0;color:var(--mute)}
+.letter p{margin:3px 0;font-size:.72rem}
+.scene.open .flap{transform:rotateX(180deg);z-index:1}
+.scene.open .seal{opacity:0}
+.scene.open .letter{transform:translateY(-62%)}
+.scene.open ~ .hint{display:none}
+/* cards */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px 20px;margin-bottom:16px;box-shadow:0 4px 18px #0001}
+.eyebrow{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--green);font-weight:600}
+h2{font:700 1.9rem 'Cormorant Garamond',serif;margin:0 0 18px}
+.count{display:flex;justify-content:center;align-items:flex-start;gap:6px;margin-top:6px}
+.count div{min-width:62px}
+.count b{display:block;font:500 2.3rem Quicksand,sans-serif;line-height:1.1}
+.count small{font-size:.62rem;text-transform:uppercase;color:var(--mute);letter-spacing:.06em}
+.count i{font-style:normal;font-size:2rem;line-height:1.1}
+.green{background:var(--green);color:#fff;border:none;border-radius:28px;padding:30px 22px;position:relative}
+.green h3{font:700 1.5rem 'Cormorant Garamond',serif;margin:0}
+.green em{display:block;font:italic 500 1.05rem 'Cormorant Garamond',serif;margin-bottom:6px;color:#e5f2e0}
+.green p{margin:2px 0}
+.green hr{border:0;border-top:1px dashed #fff8;margin:18px 30px}
+.btn{display:inline-block;margin:10px 4px 0;padding:11px 20px;border-radius:99px;font:600 .82rem Quicksand,sans-serif;text-decoration:none;cursor:pointer;border:1px solid var(--green);background:var(--green);color:#fff}
+.btn.light{background:#fff;color:var(--green);border-color:#fff}
+.btn.ghost{background:transparent;color:var(--green)}
+.dua{background:var(--peach);color:#4a3220;border-radius:6px;padding:22px 18px;border:2px dashed #fff9;transform:rotate(-1deg)}
+.dua .ar{font-size:1.45rem;line-height:1.9}
+.dua p{margin:8px 0 0}
+.dua small{opacity:.7}
+label{display:block;text-align:left;margin:14px 0 6px;font-size:.82rem;color:var(--mute);font-weight:500}
+input,textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+.choice{display:flex;gap:8px}
+.choice button{flex:1;padding:13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;font:inherit;cursor:pointer}
+.choice button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.rv{opacity:0;transform:translateY(26px);transition:.8s}
+.rv.in{opacity:1;transform:none}
+.flw{font-size:1.6rem;letter-spacing:.4em;opacity:.8}
+footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.85rem}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.09;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='%233f7a3f' stroke-width='1'%3E%3Crect x='15' y='15' width='30' height='30'/%3E%3Crect x='15' y='15' width='30' height='30' transform='rotate(45 30 30)'/%3E%3Ccircle cx='30' cy='30' r='6'/%3E%3C/g%3E%3C/svg%3E")}
+.fdl{width:22px;height:26px;fill:var(--green);display:inline-block}
+.fdl.big{width:46px;height:55px}
+.sep{display:flex;align-items:center;justify-content:center;gap:12px;max-width:300px;margin:0 auto;padding:6px 0}
+.sep::before,.sep::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--green))}
+.sep::after{transform:scaleX(-1)}
+.card{position:relative}
+.card .c{position:absolute;width:16px;height:19px;fill:var(--green);opacity:.55}
+.card .c.tl{top:8px;left:8px;transform:rotate(-45deg)}.card .c.tr{top:8px;right:8px;transform:rotate(45deg)}
+.card .c.bl{bottom:8px;left:8px;transform:rotate(-135deg)}.card .c.br{bottom:8px;right:8px;transform:rotate(135deg)}
+.green .c{fill:#fff}
+.border-arch{height:10px;max-width:320px;margin:0 auto;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 16px);opacity:.35;border-radius:5px}
+
+.ly{width:28px;height:28px;display:inline-block;filter:drop-shadow(0 1px 2px #0003)}
+.ly.big{width:64px;height:64px}.ly.xl{width:120px;height:120px}
+.lf{width:44px;height:22px;display:inline-block}.lf.s{width:34px;height:17px}
+.lf.l{transform:rotate(-12deg)}.lf.r{transform:scaleX(-1) rotate(-12deg)}
+.flw{display:flex;align-items:center;justify-content:center;gap:2px;opacity:1;letter-spacing:0}
+.card .c{width:26px;height:26px;opacity:1;fill:none;transform:none!important;filter:drop-shadow(0 1px 2px #0003)}
+.card .c.tl{top:-10px;left:-8px}.card .c.tr{top:-10px;right:-8px}.card .c.bl{bottom:-10px;left:-8px}.card .c.br{bottom:-10px;right:-8px}
+.sep::before,.sep::after{background:linear-gradient(90deg,transparent,var(--green))}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="lily" viewBox="0 0 100 100"><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" transform="rotate(30 50 50)" fill="#f2e3cc" stroke="#dcc7a6" stroke-width=".8"/><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" transform="rotate(150 50 50)" fill="#f2e3cc" stroke="#dcc7a6" stroke-width=".8"/><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" transform="rotate(270 50 50)" fill="#f2e3cc" stroke="#dcc7a6" stroke-width=".8"/><g transform="rotate(0 50 50)"><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" fill="#fffaf1" stroke="#e3d2b5" stroke-width=".8"/><path d="M50 48V16" stroke="#d6d79a" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="30" r=".9" fill="#c98a5a"/><circle cx="54" cy="26" r=".9" fill="#c98a5a"/><circle cx="48" cy="38" r=".9" fill="#c98a5a"/></g><g transform="rotate(120 50 50)"><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" fill="#fffaf1" stroke="#e3d2b5" stroke-width=".8"/><path d="M50 48V16" stroke="#d6d79a" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="30" r=".9" fill="#c98a5a"/><circle cx="54" cy="26" r=".9" fill="#c98a5a"/><circle cx="48" cy="38" r=".9" fill="#c98a5a"/></g><g transform="rotate(240 50 50)"><path d="M50 50C37 36 39 13 50 3C61 13 63 36 50 50Z" fill="#fffaf1" stroke="#e3d2b5" stroke-width=".8"/><path d="M50 48V16" stroke="#d6d79a" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="30" r=".9" fill="#c98a5a"/><circle cx="54" cy="26" r=".9" fill="#c98a5a"/><circle cx="48" cy="38" r=".9" fill="#c98a5a"/></g><g transform="rotate(15 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><g transform="rotate(75 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><g transform="rotate(135 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><g transform="rotate(195 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><g transform="rotate(255 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><g transform="rotate(315 50 50)"><path d="M50 50V27" stroke="#9aa76a" stroke-width="1"/><ellipse cx="50" cy="25" rx="2" ry="4" fill="#c4682a"/></g><circle cx="50" cy="50" r="3" fill="#9aa76a"/></symbol><symbol id="leaf" viewBox="0 0 60 30"><path d="M2 28C14 4 40 0 58 6C48 24 24 32 2 28Z" fill="#4f8a4a"/><path d="M4 27C20 18 38 11 56 7" stroke="#9fcf93" stroke-width="1.2" fill="none"/></symbol></svg>
+
+<section class="hero">
+  <div class="flw"><svg class="lf l"><use href="#leaf"/></svg><svg class="ly xl"><use href="#lily"/></svg><svg class="lf r"><use href="#leaf"/></svg></div><div class="border-arch" style="margin-top:12px"></div>
+  <div class="scene" id="scene" role="button" tabindex="0" aria-label="Ouvrir l’enveloppe">
+    <div class="back"></div>
+    <div class="letter">
+      <div class="ar">السلام عليكم ورحمة الله وبركاته</div>
+      <h1>Nawelle &amp; Ayoub</h1>
+      <p>Ont le plaisir de vous inviter à leur<br>mariage religieux</p>
+      <p style="margin-top:6px;letter-spacing:.06em">LE 26 DÉCEMBRE 2026</p>
+      <div class="ar" style="font-size:1.1rem">إن شاء الله</div>
+    </div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="seal">✦</div>
+  </div>
+  <p class="hint">Touchez l’enveloppe pour l’ouvrir ↑</p>
+</section>
+
+<section class="rv"><div class="sep"><svg class="lf s l"><use href="#leaf"/></svg><svg class="ly"><use href="#lily"/></svg><svg class="lf s r"><use href="#leaf"/></svg></div>
+  <p class="eyebrow">Plus que</p>
+  <div class="count" id="count"><div><b>0</b><small>jours</small></div><i>:</i><div><b>0</b><small>heures</small></div><i>:</i><div><b>0</b><small>minutes</small></div><i>:</i><div><b>0</b><small>secondes</small></div></div>
+</section>
+
+<section class="rv"><div class="sep"><svg class="lf s l"><use href="#leaf"/></svg><svg class="ly"><use href="#lily"/></svg><svg class="lf s r"><use href="#leaf"/></svg></div>
+  <div class="card dua"><svg class="c tl"><use href="#lily"/></svg><svg class="c tr"><use href="#lily"/></svg><svg class="c bl"><use href="#lily"/></svg><svg class="c br"><use href="#lily"/></svg>
+    <div class="ar">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</div>
+    <p>Seigneur, donne-nous, en nos épouses et nos descendants, la joie des yeux, et fais de nous un guide pour les pieux</p>
+    <small>Al-Furqân (25), verset 74</small>
+  </div>
+</section>
+
+<section class="rv"><div class="sep"><svg class="lf s l"><use href="#leaf"/></svg><svg class="ly"><use href="#lily"/></svg><svg class="lf s r"><use href="#leaf"/></svg></div>
+  <h2>Où nous retrouver</h2>
+  <div class="card green"><svg class="c tl"><use href="#lily"/></svg><svg class="c tr"><use href="#lily"/></svg><svg class="c bl"><use href="#lily"/></svg><svg class="c br"><use href="#lily"/></svg>
+    <h3>LES FEMMES</h3><em>seront conviées</em>
+    <p>25 rue Étienne-Dolet, 63037<br>Clermont-Ferrand</p>
+    <a class="btn light" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=25+rue+%C3%89tienne-Dolet+63037+Clermont-Ferrand">📍 Itinéraire</a>
+    <hr>
+    <h3>LES HOMMES</h3><em>seront conviés</em>
+    <p>18 Rue d’Aubrac, 63100<br>Clermont-Ferrand</p>
+    <p class="ar" style="font-size:1.1rem">مسجد النور</p>
+    <p>mosquée Annour</p>
+    <a class="btn light" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=18+Rue+d%27Aubrac+63100+Clermont-Ferrand">📍 Itinéraire</a>
+  </div>
+  <a class="btn ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mariage+Nawelle+%26+Ayoub&dates=20261226/20261227&location=Clermont-Ferrand">📅 Ajouter au calendrier</a>
+</section>
+
+<section class="rv"><div class="sep"><svg class="lf s l"><use href="#leaf"/></svg><svg class="ly"><use href="#lily"/></svg><svg class="lf s r"><use href="#leaf"/></svg></div>
+  <h2>Votre réponse</h2>
+  <div class="card"><svg class="c tl"><use href="#lily"/></svg><svg class="c tr"><use href="#lily"/></svg><svg class="c bl"><use href="#lily"/></svg><svg class="c br"><use href="#lily"/></svg>
+    <label for="nom">Votre nom</label><input id="nom" type="text" autocomplete="name">
+    <label>Serez-vous des nôtres ?</label>
+    <div class="choice"><button type="button" data-v="Je serai présent(e), in shaa Allah 🤍">Oui, in shaa Allah</button><button type="button" data-v="Je ne pourrai malheureusement pas venir">Non</button></div>
+    <label for="nb">Nombre de personnes</label><input id="nb" type="number" min="1" max="10" value="1" inputmode="numeric">
+    <label for="msg">Un petit mot (optionnel)</label><textarea id="msg" rows="3"></textarea>
+    <a class="btn" id="send" href="#" style="margin-top:18px">Envoyer par WhatsApp</a>
+  </div>
+</section>
+
+<footer><svg class="ly big"><use href="#lily"/></svg><br><span class="ar" style="font-size:1.2rem">جزاكم الله خيرا</span><br>Nawelle &amp; Ayoub · 26.12.2026</footer>
+
+<script>
+var sc=document.getElementById('scene');
+function op(){sc.classList.toggle('open')}
+sc.onclick=op;sc.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();op()}};
+var T=new Date('2026-12-26T00:00:00+01:00');
+function tick(){var d=Math.max(0,T-new Date()),b=document.querySelectorAll('#count b');
+b[0].textContent=Math.floor(d/864e5);b[1].textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');b[2].textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');b[3].textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}
+tick();setInterval(tick,1000);
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(s){io.observe(s)});
+var rep='';
+document.querySelectorAll('.choice button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.choice button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');rep=b.dataset.v}});
+document.getElementById('send').onclick=function(e){
+var n=document.getElementById('nom').value.trim();
+if(!n||!rep){e.preventDefault();alert('Merci d’indiquer votre nom et votre réponse.');return}
+var t='Assalamu alaykum ! C’est '+n+'. '+rep+'. Nombre de personnes : '+document.getElementById('nb').value+'. '+document.getElementById('msg').value;
+this.href='https://wa.me/33774419039?text='+encodeURIComponent(t);this.target='_blank'};
+</script>
+</body>
+</html>
